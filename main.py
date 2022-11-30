@@ -36,18 +36,10 @@ def start(filter_thread_status=0):
                             for line in f:
                                 print(line.strip())
                             f.close()
-                            # print("Source address IP: ", ipv4_header["Source address"])
-                            # print("Destination address IP: ", ipv4_header["Destination address"])
-                            # print("Protocol: ", ipv4_header["Protocol"])
-                            # print("Source Port: ", tcp_header["Source port"])
-                            # print("Destination port: ", tcp_header["Destination port"])
-                            # print("HTTP header: ", http_decoded.strip())
-                            # print("\n\n\n")
                         except FileNotFoundError:
                             print(f"Sorry, the status.txt does not exist.")
                     elif int(response_status[0]) == filter_thread_status:
                         try:
-                            #regex = ""
                             f = open("status.txt", "a")
                             f.write("source_address_IP=\"" + str(ipv4_header["Source address"]) + "\" ")
                             f.write("destination_address_IP=\"" + str(ipv4_header["Destination address"]) + "\" ")
@@ -58,18 +50,7 @@ def start(filter_thread_status=0):
                             f.write("HTTP_header=\"" + http_decoded.strip() + "\" *\n\n\n")
                             f.close()
                             f = open("status.txt", "r")
-                            # if filter_thread_status == 1:
-                            #     regex = r"1\d{2}"
-                            # elif filter_thread_status == 2:
-                            #     regex = r"2\d{2}"
-                            # elif filter_thread_status == 3:
-                            #     regex = r"3\d{2}"
-                            # elif filter_thread_status == 4:
-                            #     regex = r"4\d{2}"
-                            # elif filter_thread_status == 5:
-                            #     regex = r"5\d{2}"
                             for line in f:
-                                # if re.search("HTTP_response_status=\"" + regex + "\"", line.strip()):
                                 print(line.strip())
                             f.close()
                         except FileNotFoundError:

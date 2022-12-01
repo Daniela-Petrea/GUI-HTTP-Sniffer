@@ -4,7 +4,7 @@
    - IPV4 header parsing
    - TCP header parsing
    - working on both Linux OS and Windows
-   - real-time visualization of HTTP requests
+   - real-time visualization of decoded HTTP requests
    - dynamic filtering 
    
                1. depending on the HTTP response status codes on Linux 
